@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include "Observer.h"
-
+#define HAUTEUR_PERSO 70
+#define LARGEUR_PERSO 58
 using namespace std;
 
 void Observateur::Update(const Observable* observable) const
@@ -68,7 +69,7 @@ sf::Vector2f Joueur::getVitesse()
 {
 	return *vitesse;
 }
-sf::Vector2f Joueur::getposition()
+sf::Vector2i Joueur::getposition()
 {
 	return *position;
 }
@@ -76,7 +77,7 @@ void Joueur::setVitesse(sf::Vector2f valeur)
 {
 	*vitesse = valeur;
 }
-void Joueur::setPosition(sf::Vector2f valeur)
+void Joueur::setPosition(sf::Vector2i valeur)
 {
 	*position = valeur;
 }
@@ -135,7 +136,9 @@ void Joueur::update()
 			}
 		}
 	}
-	sprite->setPosition(*position);
+	sprite->setPosition((sf::Vector2f)*position);
+	delete hitbox;
+	hitbox = new Hitbox(position, taille);
 	return;
 }
 void Joueur::draw()
@@ -153,12 +156,20 @@ sf::Vector2f Joueur::getSaut()
 	return *saut;
 }
 
+
+Hitbox* Joueur::getHitbox()
+{
+	return hitbox;
+}
+
 Joueur::Joueur(std::vector<Movement>* moves, Screen scre) : screen(scre)
 {
 	movements = moves;
 	saut = new sf::Vector2f(0, -20);
 	vitesse = new sf::Vector2f(8.0f, 0.0f);
-	position = new sf::Vector2f(50.0f, 200.0f);
+	position = new sf::Vector2i(50.0f, 199.0f);
+	taille = new sf::Vector2i(HAUTEUR_PERSO, LARGEUR_PERSO);
+	hitbox = new Hitbox(position, taille);
 	tempsMilli = new sf::Time();
 	deplacement = new sf::Vector2f(10, 0);
 	plateform = new int(0);

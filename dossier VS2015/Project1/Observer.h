@@ -7,6 +7,9 @@
 #include <SFML/Graphics.hpp>
 #include "myClock.h"
 #include "Screen.h"
+#include "Hitbox.h"
+
+#define TAILLE_PERS 64
 typedef int Info;
 
 
@@ -62,7 +65,8 @@ class Joueur : public Observable
 	 int* score;
 	 sf::Time* tempsMilli;
 	 int* idMove;
-	 sf::Vector2f* position;
+	 sf::Vector2i* position;
+	 sf::Vector2i* taille;
 	 sf::Vector2f* vitesse;
 	 sf::Sprite* sprite;
 	 std::vector<Movement>* movements;
@@ -73,15 +77,17 @@ public:
 	 void update();
 	 void draw();
 	 void SpriteAdvance();
+	 Hitbox* hitbox;
+	 Hitbox* getHitbox();
 	 Screen& screen;
 	 int* plateform;
 	 void Change(int valeur);
 	 sf::Vector2f getVitesse();
-	 sf::Vector2f getposition();
+	 sf::Vector2i getposition();
 	 sf::Time getTemps();
 	 int getScore();
 	 void setVitesse(sf::Vector2f);
-	 void setPosition(sf::Vector2f);
+	 void setPosition(sf::Vector2i);
 	 void setidMove(int move);
 	 int getIdMove();
 	 sf::Vector2f getSaut();

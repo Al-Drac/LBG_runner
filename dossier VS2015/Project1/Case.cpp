@@ -1,22 +1,27 @@
 #include "Case.h"
 #include <cmath>
 
-Case::Case(int type, sf::Vector2f pos)
+Case::Case(int couleur, sf::Vector2i *pos, sf::Vector2i* tail)
 {
-	couleur = type;
-	position = pos;
+	type = couleur;
+	position = new sf::Vector2f(*pos);
+	hitbox = new Hitbox(pos, tail);
 	sprite = new sf::Sprite();
 	sprite->setTexture(*Textures::getInstance()->getTexture(type));
-	sf::Vector2f pos2 = pos;
-	pos2.y -= 100;
-	sprite->setPosition(pos2);
+	position->y -= 100;
+	sprite->setPosition(*position);
 }
 
-int Case::getCouleur()
+int Case::getType()
 {
-	return couleur;
+	return type;
 }
 
+
+sf::IntRect* Case::getHitbox()
+{
+	return hitbox->getIntRect();
+}
 
 
 sf::Sprite* Case::getSprite()
@@ -24,13 +29,15 @@ sf::Sprite* Case::getSprite()
 	return sprite;
 }
 
+
 Case::~Case()
 {
 	
 }
+
 sf::Vector2f Case::getPosition()
 {
-	return position;
+	return hitbox->getPosition();
 }
 
 Textures* Textures::instance = NULL;

@@ -14,8 +14,10 @@ class Moteur
 public:
 	Moteur(Joueur*, Map*);
 	~Moteur();
-	bool compareMapAJoueur(sf::Vector2f joueurPos, std::vector<Case*>* cases);
+	int compareMapAJoueur(sf::Vector2f joueurPos, std::vector<Case*>* cases);
+	int compareMapAJoueur(Hitbox* joueurPos, std::vector<Case*>* cases);
 	bool compare2a2(sf::Vector2f, sf::Vector2f);
+	bool compare2a2(sf::IntRect*, sf::IntRect*);
 	void update();
 	void draw();
 

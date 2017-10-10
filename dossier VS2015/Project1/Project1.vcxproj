@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClCompile Include="Case.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Hitbox.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -129,6 +130,7 @@
   <ItemGroup>
     <ClInclude Include="Case.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Hitbox.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Map.h" />

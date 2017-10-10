@@ -25,7 +25,7 @@ int main()
 	needscore = false;
 	jeufini = false;
 
-	while (windows.isOpen()&& !jeufini)
+	while (windows.isOpen() && !jeufini)
 	{
 		while(windows.pollEvent(event))
 		{
@@ -45,23 +45,13 @@ int main()
 				case sf::Keyboard::Space :
 					game.getJoueur()->setidMove(1);
 						break;
-				case sf::Keyboard::Q :
-					//faire avancer le joueur
-					break;
-				case sf::Keyboard::D:
-					//faire reculer le joueur
-
 				case sf::Keyboard::S:
 					game.getJoueur()->setidMove(2);
-					//TODO accelerer la chute
-					//faire reculer le joueur
-					break;
-				case sf::Keyboard::Z:
-					//faire baisser le joueur
 					break;
 				default:
 					break;
 				}
+				break;
 			default:
 					break;
 			}
