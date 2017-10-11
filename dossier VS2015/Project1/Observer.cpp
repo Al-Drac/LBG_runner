@@ -1,8 +1,6 @@
 #include <iostream>
 
 #include "Observer.h"
-#define HAUTEUR_PERSO 70
-#define LARGEUR_PERSO 58
 using namespace std;
 
 void Observateur::Update(const Observable* observable) const
@@ -167,7 +165,7 @@ Joueur::Joueur(std::vector<Movement>* moves, Screen scre) : screen(scre)
 	movements = moves;
 	saut = new sf::Vector2f(0, -20);
 	vitesse = new sf::Vector2f(8.0f, 0.0f);
-	position = new sf::Vector2i(50.0f, 199.0f);
+	position = new sf::Vector2i(LARGEUR_PERSO, 200.0f-HAUTEUR_PERSO);
 	taille = new sf::Vector2i(HAUTEUR_PERSO, LARGEUR_PERSO);
 	hitbox = new Hitbox(position, taille);
 	tempsMilli = new sf::Time();

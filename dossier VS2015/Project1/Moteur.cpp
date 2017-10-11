@@ -45,8 +45,8 @@ void Moteur::update()
 	// je remet au début de l'écran
 	if (joueur->getposition().x > 1900)
 	{
-		joueur->setPosition(sf::Vector2i(50.0f, 200.0f));
-		joueur->setVitesse(sf::Vector2f(10.0f, 00.0f));
+		joueur->setPosition(sf::Vector2i(LARGEUR_PERSO, 200.0f - HAUTEUR_PERSO));
+		joueur->setVitesse(sf::Vector2f(joueur->getVitesse().x+2, 00.0f));
 	}
 	joueur->setPosition(joueur->getposition() + (sf::Vector2i)joueur->getVitesse());
 	return;

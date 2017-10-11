@@ -8,7 +8,6 @@ Case::Case(int couleur, sf::Vector2i *pos, sf::Vector2i* tail)
 	hitbox = new Hitbox(pos, tail);
 	sprite = new sf::Sprite();
 	sprite->setTexture(*Textures::getInstance()->getTexture(type));
-	position->y -= 100;
 	sprite->setPosition(*position);
 }
 
@@ -47,11 +46,10 @@ Textures::Textures()
 {
 	std::vector<std::string> strings;
 	strings.push_back("background.png");
-	strings.push_back("foreground2.png");
-	strings.push_back("bump.png");
-	//strings.push_back("cactus1.png");
-	strings.push_back("cactus2.png");
-	strings.push_back("cactus3.png");
+	strings.push_back("sol300x20.png");
+	strings.push_back("sol100x20.png");
+	strings.push_back("Cactus3sol60x45.png");
+	strings.push_back("CactusGsol25x60.png");
 	textures = new std::vector<sf::Texture*>();
 	for each(std::string strin in strings)
 	{

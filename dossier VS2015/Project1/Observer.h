@@ -9,7 +9,8 @@
 #include "Screen.h"
 #include "Hitbox.h"
 
-#define TAILLE_PERS 64
+#define HAUTEUR_PERSO 49
+#define LARGEUR_PERSO 40
 typedef int Info;
 
 

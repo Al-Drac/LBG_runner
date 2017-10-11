@@ -4,7 +4,8 @@
 #include "Case.h"
 #include "Map.h"
 #include <iostream>
-#define TAILLE_JOUEUR 300
+#define HAUTEUR_PERSO 49
+#define LARGEUR_PERSO 40
 #include <math.h>
 class Moteur
 {
