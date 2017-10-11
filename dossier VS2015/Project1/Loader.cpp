@@ -28,7 +28,7 @@ void Loader::initPers()
 	sf::Texture* texture;
 	moves = new std::vector<Movement>();
 	std::list<std::string>::iterator it = tabImages.begin();
-	for (int i = 0; i < tabImages.size(); i++)
+	for (unsigned int i = 0; i < tabImages.size(); i++)
 	{
 		std::vector<sf::Sprite*>* sprites = new std::vector<sf::Sprite*>();
 		std::vector<sf::Texture*>* textures = new std::vector<sf::Texture*>();

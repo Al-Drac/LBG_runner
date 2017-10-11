@@ -1,6 +1,8 @@
 #pragma once
 #ifndef _SCREEN_H_
 #define _SCREEN_H_
+#include <list>
+#include <vector>
 #include <SFML/Graphics.hpp>
 class Screen
 {

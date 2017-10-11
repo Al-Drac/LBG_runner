@@ -1,6 +1,8 @@
 #pragma once
 #ifndef CASE_H
 #define CASE_H
+#include <list>
+#include <vector>
 #include <SFML/Graphics.hpp>
 #include "Hitbox.h"
 

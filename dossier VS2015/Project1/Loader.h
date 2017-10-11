@@ -4,6 +4,7 @@
 #define TAILLE_PERS 64
 #define IMG_SIZE 128
 #include <list>
+#include <vector>
 #include "Observer.h"
 class Loader
 {
