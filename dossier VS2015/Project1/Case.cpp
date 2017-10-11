@@ -57,14 +57,6 @@ Textures::Textures()
 		text->loadFromFile(strings.at(i));
 		textures->push_back(text);
 	}
-	/*
-	for each(std::string strin in strings)
-	{
-		sf::Texture* text = new sf::Texture();
-		text->loadFromFile(strin);
-		textures->push_back(text);
-	}
-	*/
 }
 sf::Texture* Textures::getTexture(int num)
 {
@@ -76,19 +68,8 @@ sf::Texture* Textures::getTexture(int num)
 			return textures->at(i);
 		}
 	}
-	/*
-	int i = 0;
-	
-	for each (sf::Texture* tex in *textures)
-	{
-		if (i == num)
-		{
-			return tex;
-		}
-		i++;
-	}*/
 }
-//TODO
+
 Textures::~Textures()
 {}
 Textures* Textures::getInstance()

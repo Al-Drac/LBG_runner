@@ -28,11 +28,6 @@ void Game::draw()
 	{
 		screen.add((*it)->getSprite());
 	}
-
-	/*
-	for each (Case* casess in *map->cases)
-		screen.add(map->cases->end()->getSprite());
-	*/
 	screen.add(joueur->getSprite());
 	screen.update();
 

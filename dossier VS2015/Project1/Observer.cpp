@@ -133,16 +133,6 @@ void Joueur::update()
 				*idMove = 0;
 			}
 		}
-		/*
-		for each (Movement mov in *movements)
-		{
-			if (*idMove == mov.getId())
-			{
-				sprite = mov.getNextSprite();
-				*idMove = 0;
-			}
-		}
-		*/
 	}
 	sprite->setPosition((sf::Vector2f)*position);
 	delete hitbox;
@@ -173,10 +163,10 @@ Hitbox* Joueur::getHitbox()
 Joueur::Joueur(std::vector<Movement>* moves, Screen scre) : screen(scre)
 {
 	movements = moves;
-	saut = new sf::Vector2f(0, -20);
-	vitesse = new sf::Vector2f(8.0f, 0.0f);
+	saut = new sf::Vector2f(0, -30);
+	vitesse = new sf::Vector2f(10.0f, 0.0f);
 	position = new sf::Vector2i(LARGEUR_PERSO, 200.0f-HAUTEUR_PERSO);
-	taille = new sf::Vector2i(HAUTEUR_PERSO, LARGEUR_PERSO);
+	taille = new sf::Vector2i(LARGEUR_PERSO, HAUTEUR_PERSO);
 	hitbox = new Hitbox(position, taille);
 	tempsMilli = new sf::Time();
 	deplacement = new sf::Vector2f(10, 0);

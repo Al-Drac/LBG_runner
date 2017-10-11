@@ -4,7 +4,7 @@ Moteur::Moteur(Joueur* jou, Map* maps)
 {
 	joueur = jou;
 	map = maps;
-	gravite = new sf::Vector2f(0, 2);
+	gravite = new sf::Vector2f(0, 4 );
 }
 
 void Moteur::draw()
@@ -39,6 +39,10 @@ void Moteur::update()
 			joueur->setVitesse(sf::Vector2f(0.0f, 0.0f));
 			joueur->setidMove(3);
 		break;
+	case 4:
+		joueur->setVitesse(sf::Vector2f(0.0f, 0.0f));
+		joueur->setidMove(3);
+		break;
 	default:
 		break;
 	}
@@ -66,16 +70,6 @@ int Moteur::compareMapAJoueur(Hitbox* joueurPos, std::vector<Case*>* cases)
 			return cases->at(i)->getType();
 		}
 	}
-
-	/*
-	for each(Case* sf in *cases)
-	{
-		if (compare2a2(joueurPos->getIntRect(), sf->getHitbox()))
-		{
-			return sf->getType();
-		}
-	}
-	*/
 	return 0;
 }
 

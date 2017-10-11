@@ -8,12 +8,6 @@ Loader::Loader(std::list<std::string> lst)
 		tabImages.push_back(*it);
 	}
 
-	/*
-	for each (std::string var in lst)
-	{
-		tabImages.push_back(var);
-	}
-	*/
 }
 Loader::~Loader() {
 	

@@ -1,21 +1,8 @@
-﻿  Case.cpp
-Case.cpp(54): warning C4018: '<': signed/unsigned mismatch
-Case.cpp(72): warning C4018: '<': signed/unsigned mismatch
-  Game.cpp
-  Hitbox.cpp
-  Loader.cpp
-  main.cpp
-  Map.cpp
-  Moteur.cpp
-Moteur.cpp(48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-Moteur.cpp(62): warning C4018: '<': signed/unsigned mismatch
-  myClock.cpp
-  Observer.cpp
+﻿  Observer.cpp
 Observer.cpp(128): warning C4018: '<': signed/unsigned mismatch
-Observer.cpp(178): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Screen.cpp
+Observer.cpp(168): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating code
-  0 of 747 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  1 of 747 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

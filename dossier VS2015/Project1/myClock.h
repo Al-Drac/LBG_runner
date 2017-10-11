@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _MY_CLOCK_H_
 #define _MY_CLOCK_H_
+
 #include <SFML/Graphics.hpp>
 
 class myClock

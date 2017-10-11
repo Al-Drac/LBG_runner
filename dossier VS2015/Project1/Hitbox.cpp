@@ -17,5 +17,4 @@ sf::Vector2f Hitbox::getPosition()
 }
 Hitbox::~Hitbox()
 {
-
 }
