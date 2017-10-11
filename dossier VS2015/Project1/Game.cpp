@@ -24,8 +24,15 @@ void Game::update()
 }
 void Game::draw()
 {
+	for (std::vector<Case*>::iterator it = map->cases->begin(); it != map->cases->end(); it++)
+	{
+		screen.add((*it)->getSprite());
+	}
+
+	/*
 	for each (Case* casess in *map->cases)
-		screen.add(casess->getSprite());
+		screen.add(map->cases->end()->getSprite());
+	*/
 	screen.add(joueur->getSprite());
 	screen.update();
 

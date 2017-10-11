@@ -125,6 +125,15 @@ void Joueur::update()
 	if (tempsMilli->asMilliseconds() > 150.0f)
 	{
 		tempsMilli = new sf::Time();
+		for (int i = 0; i < movements->size(); i++)
+		{
+			if (*idMove == movements->at(i).getId())
+			{
+				sprite = movements->at(i).getNextSprite();
+				*idMove = 0;
+			}
+		}
+		/*
 		for each (Movement mov in *movements)
 		{
 			if (*idMove == mov.getId())
@@ -133,6 +142,7 @@ void Joueur::update()
 				*idMove = 0;
 			}
 		}
+		*/
 	}
 	sprite->setPosition((sf::Vector2f)*position);
 	delete hitbox;

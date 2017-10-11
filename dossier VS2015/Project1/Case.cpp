@@ -51,16 +51,34 @@ Textures::Textures()
 	strings.push_back("Cactus3sol60x45.png");
 	strings.push_back("CactusGsol25x60.png");
 	textures = new std::vector<sf::Texture*>();
+	for (int i = 0; i < strings.size(); i++)
+	{
+		sf::Texture* text = new sf::Texture();
+		text->loadFromFile(strings.at(i));
+		textures->push_back(text);
+	}
+	/*
 	for each(std::string strin in strings)
 	{
 		sf::Texture* text = new sf::Texture();
 		text->loadFromFile(strin);
 		textures->push_back(text);
 	}
+	*/
 }
 sf::Texture* Textures::getTexture(int num)
 {
+
+	for (int i = 0; i < textures->size(); i++)
+	{
+		if (i == num)
+		{
+			return textures->at(i);
+		}
+	}
+	/*
 	int i = 0;
+	
 	for each (sf::Texture* tex in *textures)
 	{
 		if (i == num)
@@ -68,7 +86,7 @@ sf::Texture* Textures::getTexture(int num)
 			return tex;
 		}
 		i++;
-	}
+	}*/
 }
 //TODO
 Textures::~Textures()

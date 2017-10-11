@@ -1,4 +1,6 @@
-﻿  Moteur.cpp
-c:\users\amo\desktop\little big game\moubri_a\lbg_runner\dossier vs2015\project1\moteur.cpp(48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  Loader.cpp
+c:\users\amo\desktop\little big game\moubri_a\lbg_runner\dossier vs2015\project1\loader.cpp(31): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+  Generating Code...
   Project1.vcxproj -> C:\Users\AMO\Desktop\Little Big Game\moubri_a\LBG_runner\dossier VS2015\Debug\Project1.exe
   Project1.vcxproj -> C:\Users\AMO\Desktop\Little Big Game\moubri_a\LBG_runner\dossier VS2015\Debug\Project1.pdb (Partial PDB)

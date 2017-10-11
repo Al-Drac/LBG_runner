@@ -59,6 +59,15 @@ Moteur::~Moteur()
 
 int Moteur::compareMapAJoueur(Hitbox* joueurPos, std::vector<Case*>* cases)
 {
+	for (int i = 0; i < cases->size(); i++)
+	{
+		if (compare2a2(joueurPos->getIntRect(), cases->at(i)->getHitbox()))
+		{
+			return cases->at(i)->getType();
+		}
+	}
+
+	/*
 	for each(Case* sf in *cases)
 	{
 		if (compare2a2(joueurPos->getIntRect(), sf->getHitbox()))
@@ -66,6 +75,7 @@ int Moteur::compareMapAJoueur(Hitbox* joueurPos, std::vector<Case*>* cases)
 			return sf->getType();
 		}
 	}
+	*/
 	return 0;
 }
 
