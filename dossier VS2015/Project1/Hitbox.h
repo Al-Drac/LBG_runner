@@ -1,6 +1,7 @@
 #ifndef _HITBOX_H_
 #define _HITBOX_H_
 #include <SFML/Graphics.hpp>
+
 class Hitbox
 {
 public:
@@ -13,4 +14,5 @@ private:
 	sf::Vector2i* tailleHitbox;
 	sf::IntRect* carre;
 };
+
 #endif _HITBOX_H_

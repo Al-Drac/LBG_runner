@@ -18,7 +18,8 @@ private:
 	 Moteur* moteur;
 	 Screen& screen;
 	 sf::Clock* Clock;
-	 bool jeufini;
+	 bool jeufini; 
+	 bool* partiefini;
 	 std::vector<AbstractEntity*> entities;
 public:
 	~Game();

@@ -33,7 +33,6 @@ public:
 class Observable
 {
 	std::list<Observateur*> m_list;
-
 	typedef std::list<Observateur*>::iterator iterator;
 	typedef std::list<Observateur*>::const_iterator const_iterator;
 
@@ -48,58 +47,6 @@ protected:
 
 };
 
-class Movement
-{
-	int* MovementId;
-	std::vector<sf::Sprite*>* movements;
-	std::vector<sf::Texture*>* textures;
-	int* place;
-public:
-	sf::Sprite* getNextSprite();
-	void resetMovements();
-	int getId();
-	Movement(int, std::vector<sf::Sprite*>*, std::vector<sf::Texture*>*);
-	~Movement();
-};
-class Joueur : public Observable
-{
-	 int* score;
-	 sf::Time* tempsMilli;
-	 int* idMove;
-	 sf::Vector2i* position;
-	 sf::Vector2i* taille;
-	 sf::Vector2f* vitesse;
-	 sf::Sprite* sprite;
-	 std::vector<Movement>* movements;
-	 sf::Vector2f* saut;
-	 sf::Vector2f* deplacement;
-public:
-	 //static Joueur* getInstance(std::list<Movement> moves);
-	 void update();
-	 void draw();
-	 void SpriteAdvance();
-	 Hitbox* hitbox;
-	 Hitbox* getHitbox();
-	 Screen& screen;
-	 int* plateform;
-	 void Change(int valeur);
-	 sf::Vector2f getVitesse();
-	 sf::Vector2i getposition();
-	 sf::Time getTemps();
-	 int getScore();
-	 void setVitesse(sf::Vector2f);
-	 void setPosition(sf::Vector2i);
-	 void setidMove(int move);
-	 int getIdMove();
-	 sf::Vector2f getSaut();
-	 void addTemps(sf::Time);
-	 void addScore(int);
-	 sf::Sprite* getSprite();
-	 int Statut(void) const;
-	 Joueur(std::vector<Movement>* moves, Screen scre);
-	 ~Joueur();
-private :
-};
 
 
 class MeteoFrance : public Observateur

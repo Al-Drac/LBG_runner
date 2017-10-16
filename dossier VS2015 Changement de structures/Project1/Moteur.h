@@ -15,9 +15,10 @@ class Moteur : Observateur
 	Map* map;
 	sf::Vector2f* gravite;
 	int state;
+	bool* partiefini;
 	Screen screen;
 public:
-	Moteur(Joueur*, Map*, Screen screeen);
+	Moteur(Joueur*, Map*, Screen screeen, bool* partie_fini);
 	~Moteur();
 	void Notified(Observable* obs);
 	int compareMapAJoueur(Hitbox* joueurPos, std::vector<Case*>* cases);

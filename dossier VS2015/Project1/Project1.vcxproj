@@ -118,9 +118,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractEntity.cpp" />
     <ClCompile Include="Case.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Hitbox.cpp" />
+    <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -130,9 +132,11 @@
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractEntity.h" />
     <ClInclude Include="Case.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Hitbox.h" />
+    <ClInclude Include="Joueur.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Map.h" />

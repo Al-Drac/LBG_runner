@@ -10,9 +10,9 @@ Map::Map()
 	sf::Vector2i* taillecas0 = new sf::Vector2i(0, 0);
 	sf::Vector2i* taillecas1 = new sf::Vector2i(300, 20);
 	sf::Vector2i* taillecas2 = new sf::Vector2i(100, 20);
-	sf::Vector2i* taillecas3 = new sf::Vector2i(60, 45);
-	sf::Vector2i* taillecas4 = new sf::Vector2i(25, 60);
-	std::string str = "01314141314131413141324";
+	sf::Vector2i* taillecas3 = new sf::Vector2i(60, 49);
+	sf::Vector2i* taillecas4 = new sf::Vector2i(25, 61);
+	std::string str = "0131414131413141314132411112111131113111311121111131111211113111121111211112111112111211121";
 	
 	for (unsigned i = 0; i<str.length(); ++i)
 	{
@@ -46,7 +46,13 @@ Map::Map()
 	}
 }
 
-
+void Map::update()
+{
+	for (std::vector<Case*>::iterator it = cases->begin(); it != cases->end(); it++)
+	{
+        (*it)->decale(TAILLE_ECRAN);
+	}
+}
 Map::~Map()
 {
 }

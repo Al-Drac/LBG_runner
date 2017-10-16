@@ -24,44 +24,80 @@ int main()
 	bool needscore;
 	needscore = false;
 	jeufini = false;
+	bool ok = false;
 
-	while (windows.isOpen() && !jeufini)
+	while (windows.isOpen())
 	{
-		while(windows.pollEvent(event))
+		while (!jeufini)
 		{
-			switch (event.type)
+			while (windows.pollEvent(event))
 			{
-				// fenêtre fermée
-			case sf::Event::Closed:
-				windows.close();
-				break;
-				// touche pressée
-			case sf::Event::KeyPressed:
-				switch (event.key.code)
+				switch (event.type)
 				{
-				case sf::Keyboard::Escape:
+					// fenêtre fermée
+				case sf::Event::Closed:
 					windows.close();
+					jeufini = true; 
+					ok = true;
 					break;
-				case sf::Keyboard::Space :
-					game.getJoueur()->setidMove(1);
+					// touche pressée
+				case sf::Event::KeyPressed:
+					switch (event.key.code)
+					{
+					case sf::Keyboard::Escape:
+						windows.close();
+						jeufini = true;
+						ok = true;
 						break;
-				case sf::Keyboard::S:
-					game.getJoueur()->setidMove(2);
+					case sf::Keyboard::Space:
+						game.getJoueur()->setidMove(1);
+						break;
+					case sf::Keyboard::S:
+						game.getJoueur()->setidMove(2);
+						break;
+					default:
+						break;
+					}
 					break;
 				default:
 					break;
 				}
-				break;
-			default:
-					break;
 			}
-		}
-		if (Clock->getClock()->getElapsedTime().asMilliseconds() > 40.0f)
+			if (Clock->getClock()->getElapsedTime().asMilliseconds() > 40.0f)
+			{
+				game.update();
+				game.draw();
+				Clock->getClock()->restart();
+			}
+		}/*
+		while (!ok)
 		{
-			game.update();
-			game.draw();
-			Clock->getClock()->restart();
-		}
+			while (windows.pollEvent(event))
+			{
+				switch (event.type)
+				{ 
+				case sf::Event::Closed:
+					ok = true;
+					windows.close();
+					break;
+					// touche pressée
+				case sf::Event::KeyPressed:
+					switch (event.key.code)
+					{
+					case sf::Keyboard::Escape:
+						windows.close();
+						ok = true;
+						break;
+					case sf::Keyboard::Space:
+						ok = true;
+						break;
+					}
+					break;
+				default:
+					break;
+				}
+			}
+		}*/
 	}
 	return 0;
 } 

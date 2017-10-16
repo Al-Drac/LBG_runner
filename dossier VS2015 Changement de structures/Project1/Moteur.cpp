@@ -1,9 +1,10 @@
 #include "Moteur.h"
 
-Moteur::Moteur(Joueur* jou, Map* maps, Screen screeen) : screen(screeen)
+Moteur::Moteur(Joueur* jou, Map* maps, Screen screeen, bool* partie_fini) : screen(screeen)
 {
 	joueur = jou;
 	map = maps;
+	partiefini = partie_fini;
 	gravite = new sf::Vector2f(0, 4);
 	joueur->getHitbox()->AddObs(this);
 	for (std::vector<Case*>::iterator it = map->cases->begin(); it != map->cases->end(); it++)
@@ -44,6 +45,7 @@ void Moteur::update()
 		}
 		else 
 			joueur->setVitesse(sf::Vector2f(joueur->getVitesse().x, 0));
+		map->AddVitesse(0.02f);
 		break;
 	case 0:
  		if (joueur->getIdMove() == 2)
@@ -51,19 +53,22 @@ void Moteur::update()
 		else
 			joueur->setVitesse(sf::Vector2f(joueur->getVitesse().x, joueur->getVitesse().y + gravite->y));
 			break;
+		map->AddVitesse(0.02f);
 	case 3:
-			joueur->setVitesse(sf::Vector2f(0.0f, 0.0f));
-			joueur->setidMove(3);
+		map->Stop();
+		joueur->setidMove(3);
+		*partiefini = true;
 		break;
 	case 4:
-		joueur->setVitesse(sf::Vector2f(0.0f, 0.0f));
 		joueur->setidMove(3);
+		*partiefini = true;
+		map->Stop();
 		break;
 	default:
 		break;
 	}
 	// je remet au début de l'écran
-	map->setVitesse(0.02f);
+	
 	joueur->setPosition(joueur->getposition() + (sf::Vector2i)joueur->getVitesse());
 	return;
 }

@@ -4,11 +4,12 @@
 Case::Case(int couleur, sf::Vector2i *pos, sf::Vector2i* tail)
 {
 	type = couleur;
-	position = new sf::Vector2f(*pos);
+	position = new sf::Vector2i(*pos);
+	taille = new sf::Vector2i(*tail);
 	hitbox = new Hitbox(pos, tail);
 	sprite = new sf::Sprite();
 	sprite->setTexture(*Textures::getInstance()->getTexture(type));
-	sprite->setPosition(*position);
+	sprite->setPosition(sf::Vector2f(*position));
 }
 
 int Case::getType()
@@ -33,7 +34,14 @@ Case::~Case()
 {
 	
 }
-
+//decale la cases d'une valeur en arrière
+void Case::decale(int tailleMap)
+{
+	position->x -= tailleMap;
+	delete hitbox;
+	hitbox = new Hitbox(position, taille);
+	sprite->setPosition(sf::Vector2f(*position));
+}
 sf::Vector2f Case::getPosition()
 {
 	return hitbox->getPosition();
@@ -48,10 +56,10 @@ Textures::Textures()
 	strings.push_back("background.png");
 	strings.push_back("sol300x20.png");
 	strings.push_back("sol100x20.png");
-	strings.push_back("Cactus3sol60x45.png");
-	strings.push_back("CactusGsol25x60.png");
+	strings.push_back("Cactus3sol60x50.png");
+	strings.push_back("CactusGsol25x61.png");
 	textures = new std::vector<sf::Texture*>();
-	for (int i = 0; i < strings.size(); i++)
+	for (int i = 0; i < (int) strings.size(); i++)
 	{
 		sf::Texture* text = new sf::Texture();
 		text->loadFromFile(strings.at(i));
@@ -61,13 +69,14 @@ Textures::Textures()
 sf::Texture* Textures::getTexture(int num)
 {
 
-	for (int i = 0; i < textures->size(); i++)
+	for (int i = 0; i < (int) textures->size(); i++)
 	{
 		if (i == num)
 		{
 			return textures->at(i);
 		}
 	}
+	return NULL;
 }
 
 Textures::~Textures()

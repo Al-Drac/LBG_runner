@@ -20,7 +20,8 @@ void Game::update()
 	screen.draw();
 	moteur->update();
 	joueur->update();
-	//map->update();
+	if (joueur->getposition().x >= 1800)
+		map->update();
 }
 void Game::draw()
 {

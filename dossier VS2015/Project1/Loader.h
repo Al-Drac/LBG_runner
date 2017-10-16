@@ -5,7 +5,8 @@
 #define IMG_SIZE 128
 #include <list>
 #include <vector>
-#include "Observer.h"
+#include <iostream>
+#include "Joueur.h"
 class Loader
 {
 	std::vector<Movement>* moves;

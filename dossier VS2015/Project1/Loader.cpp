@@ -1,5 +1,4 @@
 #include "Loader.h"
-#include <iostream>
 Loader::Loader(std::list<std::string> lst)
 {
 	tabImages = std::list<std::string>();

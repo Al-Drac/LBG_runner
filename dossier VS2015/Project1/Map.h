@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "Case.h"
 #include "Screen.h"
+#define TAILLE_ECRAN 1800
 class Map
 {
 
@@ -14,5 +15,8 @@ public:
 	void update();
 	void draw();
 };
+
+
+
 
 #endif

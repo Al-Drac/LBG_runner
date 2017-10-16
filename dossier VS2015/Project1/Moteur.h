@@ -1,6 +1,6 @@
 #ifndef _MOTEUR_H_
 #define _MOTEUR_H_
-#include "Observer.h"
+#include "Joueur.h"
 #include "Case.h"
 #include "Map.h"
 #include <iostream>

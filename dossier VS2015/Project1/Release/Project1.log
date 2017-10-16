@@ -1,10 +1,8 @@
-﻿  Observer.cpp
-Observer.cpp(128): warning C4018: '<': signed/unsigned mismatch
-Observer.cpp(168): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  main.cpp
   Generating code
   1 of 747 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Project1.vcxproj -> C:\Users\AMO\Desktop\Little Big Game\moubri_a\LBG_runner\dossier VS2015\Release\Project1.exe
   Project1.vcxproj -> C:\Users\AMO\Desktop\Little Big Game\moubri_a\LBG_runner\dossier VS2015\Release\Project1.pdb (Full PDB)

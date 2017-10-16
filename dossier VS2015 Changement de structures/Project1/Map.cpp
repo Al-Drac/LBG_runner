@@ -46,15 +46,20 @@ Map::Map(Screen& myscreen) : screen(myscreen)
 		cases->push_back(cas);
 	}
 }
+void Map::Stop()
+{
+	vitesse = 0.0f;
+}
 
 void Map::Update()
 {
 	for (std::vector<Case*>::iterator it = cases->begin(); it != cases->end(); it++)
 	{
-		(*it)->decale(vitesse);
+		if (it != cases->begin())
+			(*it)->decale(vitesse);
 	}
 }
-void Map::setVitesse(float diff)
+void Map::AddVitesse(float diff)
 {
 	vitesse += diff;
 }

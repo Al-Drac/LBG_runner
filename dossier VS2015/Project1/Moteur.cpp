@@ -47,9 +47,9 @@ void Moteur::update()
 		break;
 	}
 	// je remet au début de l'écran
-	if (joueur->getposition().x > 1900)
+	if (joueur->getposition().x > 1800)
 	{
-		joueur->setPosition(sf::Vector2i(LARGEUR_PERSO, 200.0f - HAUTEUR_PERSO));
+		joueur->setPosition(sf::Vector2i(LARGEUR_PERSO, 200 - HAUTEUR_PERSO));
 		joueur->setVitesse(sf::Vector2f(joueur->getVitesse().x+2, 00.0f));
 	}
 	joueur->setPosition(joueur->getposition() + (sf::Vector2i)joueur->getVitesse());
@@ -63,7 +63,7 @@ Moteur::~Moteur()
 
 int Moteur::compareMapAJoueur(Hitbox* joueurPos, std::vector<Case*>* cases)
 {
-	for (int i = 0; i < cases->size(); i++)
+	for (int i = 0; i < (int) cases->size(); i++)
 	{
 		if (compare2a2(joueurPos->getIntRect(), cases->at(i)->getHitbox()))
 		{

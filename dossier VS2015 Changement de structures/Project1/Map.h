@@ -13,7 +13,8 @@ private:
 public: 
 	Map(Screen& screen);
 	~Map();
-	void setVitesse(float);
+	void AddVitesse(float);
+	void Stop();
 	std::vector<Case*>* cases;
 	Screen& screen;
 	void Update();

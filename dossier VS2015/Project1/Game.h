@@ -3,7 +3,7 @@
 #define _GAME_H_
 #include <list>
 #include <SFML/Graphics.hpp>
-#include "Observer.h"
+#include "Joueur.h"
 #include "Moteur.h"
 #include "Loader.h"
 
